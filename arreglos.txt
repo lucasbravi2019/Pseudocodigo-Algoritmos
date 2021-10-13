@@ -5,7 +5,7 @@ PROGRAMA Arreglos
         INICIO
         VARIAR i DESDE 1 HASTA 100
             REPETIR
-                ESCRIBIR("Ingrese el auto numero " + i)
+                ESCRIBIR("Ingrese el auto numero ", i)
                 LEER(Autos[i])
             HASTA QUE(longitud(Autos[i] > 0))
         FIN VARIAR
@@ -15,7 +15,7 @@ PROGRAMA Arreglos
         VAR i: ENTERO
         INICIO
         VARIAR i DESDE 1 HASTA 100
-            ESCRIBIR("Auto " + i + ": " + Autos[i])
+            ESCRIBIR("Auto ", i, ": ", Autos[i])
         FIN VARIAR
     FIN PROCEDIMIENTO
 

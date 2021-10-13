@@ -95,7 +95,7 @@ PROGRAMA Muestras
                 FIN SI
             FIN VARIAR
             SI(Cuenta > 2) ENTONCES
-                ESCRIBIR(Tomas[i].Individuo.Nombre + " " + Tomas[i].Individuo.Apellido)
+                ESCRIBIR(Tomas[i].Individuo.Nombre, " ", Tomas[i].Individuo.Apellido)
             FIN SI
         FIN VARIAR
     FIN PROCEDIMIENTO

@@ -29,8 +29,8 @@ PROGRAMA Funciones
         LEER(b)
     HASTA QUE(b <> 0)
 
-    ESCRIBIR("La suma es: " + sumar(a, b))
-    ESCRIBIR("La resta es: " + restar(a, b))
-    ESCRIBIR("La multiplicacion es: " + multiplicar(a, b))
-    ESCRIBIR("La division es: " + dividir(a, b))
+    ESCRIBIR("La suma es: ", sumar(a, b))
+    ESCRIBIR("La resta es: ", restar(a, b))
+    ESCRIBIR("La multiplicacion es: ", multiplicar(a, b))
+    ESCRIBIR("La division es: ", dividir(a, b))
 FIN PROGRAMA
