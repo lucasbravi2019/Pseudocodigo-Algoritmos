@@ -1,0 +1,32 @@
+PROGRAMA practica
+    FUNCION fibo(numero: ENTERO): ENTERO
+        SI(numero > 2) ENTONCES
+            fibo = fibo + fibo(numero - 1) + fibo(numero - 2)
+        SINO
+            SI(numero == 1) ENTONCES
+                fibo = 0
+            FIN SI
+            
+            SI(numero == 2) ENTONCES
+                fibo = 1
+            FIN SI
+        FIN SI
+    FIN FUNCION
+
+    PROCEDIMIENTO mostrarSucesionFibonacci(limite: ENTERO)
+        VAR i: ENTERO
+        INICIO
+        VARIAR i DESDE 1 HASTA limite
+            ESCRIBIR("Termino ", i, ": ", fibo(i))
+        FIN VARIAR
+    FIN PROCEDIMIENTO
+
+    VAR limite: ENTERO
+    INICIO  
+    REPETIR
+        ESCRIBIR("Escriba el limite de la sucesion de Fibonacci a mostrar")
+        LEER(limite)
+    HASTA QUE(limite > 0)
+
+    mostrarSucesionFibonacci(limite)
+FIN PROGRAMA

@@ -1,0 +1,108 @@
+PROGRAMA Muestras
+
+    TIPO 
+    Persona = REGISTRO
+        Nombre: CADENA
+        Apellido: CADENA
+        Sexo: CARACTER
+        Edad: ENTERO
+        Domicilio: CADENA
+        Telefono: ENTERO
+    FIN REGISTRO
+
+    TIPO 
+    Presion = REGISTRO
+        Alta: REAL
+        Baja: REAL
+    FIN REGISTRO
+
+    TIPO 
+    Pacientes = REGISTRO
+        Individuo: Persona
+        Muestra[5]: Presion
+        Familiar: CADENA
+        TelFam: ENTERO
+    FIN REGISTRO
+
+    PROCEDIMIENTO cargarInfo(Por Ref. Tomas[200]: Pacientes)
+        VAR i, j: ENTERO
+        INICIO
+        VARIAR i DESDE 1 HASTA 200
+            REPETIR
+                ESCRIBIR("Ingrese el nombre del pacientes")
+                LEER(Tomas[i].Individuo.Nombre)
+            HASTA QUE (longitud(Tomas[i].Individuo.Nombre) > 0)
+
+            REPETIR
+                ESCRIBIR("Ingrese el apellido del paciente")
+                LEER(Tomas[i].Individuo.Apellido)
+            HASTA QUE (longitud(Tomas[i].Individuo.Apellido) > 0)
+
+            REPETIR 
+                ESCRIBIR("Ingrese el sexo, M o F")
+                LEER(Tomas[i].Individuo.Sexo)
+            HASTA QUE (Tomas[i].Individuo.Sexo == "M" [O] Tomas[i].Individuo.Sexo == "F")
+
+            REPETIR
+                ESCRIBIR("Ingrese la edad del paciente")
+                LEER(Tomas[i].Individuo.Edad)
+            HASTA QUE (Tomas[i].Individuo.Edad > 0)
+
+            REPETIR
+                ESCRIBIR("Ingrese el domicilio")
+                LEER(Tomas[i].Individuo.Domicilio)
+            HASTA QUE (longitud(Tomas[i].Individuo.Domicilio) > 0)
+        
+            REPETIR
+                ESCRIBIR("Ingrese el telefono")
+                LEER(Tomas[i].Individuo.Telefono)
+            HASTA QUE (Tomas[i].Individuo.Telefono > 0)
+        
+            REPETIR
+                ESCRIBIR("Ingrese el nombre de un familiar")
+                LEER(Tomas[i].Familiar)
+            HASTA QUE (longitud(Tomas[i].Familiar) > 0)
+        
+            REPETIR
+                ESCRIBIR("Ingrese el numero telefonico del familiar")
+                LEER(Tomas[i].TelFam)
+            HASTA QUE (Tomas[i].TelFam > 0)
+            
+            ESCRIBIR("Ingrese el valor de las muestras")
+
+            VARIAR j DESDE 1 HASTA 5
+                REPETIR
+                    ESCRIBIR("Presion alta")
+                    LEER(Tomas[i].Presion.Alta)
+                HASTA QUE (Tomas[i].Presion.Alta > 0)
+
+                REPETIR
+                    ESCRIBIR("Presion baja")
+                    LEER(Tomas[i].Presion.Baja)
+                HASTA QUE (Tomas[i].Presion.Baja > 0)
+            FIN VARIAR
+        FIN VARIAR
+    FIN PROCEDIMIENTO
+
+    PROCEDIMIENTO presionAlta(Tomas[200]: Pacientes)
+        VAR Cuenta, i, j: ENTERO
+        INICIO
+        VARIAR i DESDE 1 HASTA 200
+            Cuenta = 0
+            VARIAR j DESDE 1 HASTA 5
+                SI(Tomas[i].Muestra[j].Alta > 16) ENTONCES
+                    Cuenta = Cuenta + 1
+                FIN SI
+            FIN VARIAR
+            SI(Cuenta > 2) ENTONCES
+                ESCRIBIR(Tomas[i].Individuo.Nombre + " " + Tomas[i].Individuo.Apellido)
+            FIN SI
+        FIN VARIAR
+    FIN PROCEDIMIENTO
+
+    VAR PacientesTomas[200]: Pacientes
+    INICIO
+    cargarInfo(PacientesTomas[])
+    presionAlta(PacientesTomas[])
+    
+FIN PROGRAMA

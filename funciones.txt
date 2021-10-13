@@ -1,0 +1,36 @@
+PROGRAMA Funciones
+    FUNCION sumar(a, b: ENTERO): ENTERO
+        sumar = a + b
+        RETORNO
+    FIN FUNCION
+
+    FUNCION restar(a, b: ENTERO): ENTERO
+        restar = a - b
+        RETORNO
+    FIN FUNCION
+
+    FUNCION multiplicar(a, b: ENTERO): REAL
+        multiplicar = a * b
+        RETORNO
+    FIN FUNCION
+
+    FUNCION dividir(a, b: ENTERO): REAL
+        dividir = a / b
+        RETORNO
+    FIN FUNCION
+
+    VAR a, b, sumar, restar: ENTERO, multiplicar, dividir: REAL
+    INICIO
+    ESCRIBIR("Ingrese el primer numero")
+    LEER(a)
+
+    REPETIR
+        ESCRIBIR("Ingrese el segundo numero")
+        LEER(b)
+    HASTA QUE(b <> 0)
+
+    ESCRIBIR("La suma es: " + sumar(a, b))
+    ESCRIBIR("La resta es: " + restar(a, b))
+    ESCRIBIR("La multiplicacion es: " + multiplicar(a, b))
+    ESCRIBIR("La division es: " + dividir(a, b))
+FIN PROGRAMA

@@ -1,0 +1,36 @@
+PROGRAMA recursion
+    FUNCION esPar(numero: ENTERO): LOGICO
+        SI(numero MOD 2 == 0) ENTONCES
+            esPar = [V]
+        SINO
+            esPar = [F]
+        FIN SI
+    FIN FUNCION
+
+    PROCEDIMIENTO calcularDigitos(numero, Por Ref. sumaPares, Por Ref. sumaImpares: ENTERO)
+        INICIO
+        SI(numero > 0) ENTONCES
+            SI(esPar(numero MOD 10)) ENTONCES
+                sumaPares = sumaPares + numero MOD 10
+            SINO
+                sumaImpares = sumaImpares + numero MOD 10
+            FIN SI
+            calcularDigitos(numero / 10, sumaPares, sumaImpares)
+        FIN SI
+    FIN PROCEDIMIENTO
+
+    VAR numero, sumaPares, sumaImpares: ENTERO
+    INICIO
+    sumaPares = 0
+    sumaImpares = 0
+
+    REPETIR
+        ESCRIBIR("Ingrese el numero")
+        LEER(numero)
+    HASTA QUE(numero > 0)
+
+    calcularDigitos(numero, sumaPares, sumaImpares)
+
+    ESCRIBIR("La suma entre los numeros pares es: ", sumaPares)
+    ESCRIBIR("La suma entre los numeros impares es: ", sumaImpares)
+FIN PROGRAMA

@@ -1,0 +1,27 @@
+PROGRAMA Arreglos
+
+    PROCEDIMIENTO cargarDatos(Por Ref. Autos[100]: CADENA)
+        VAR i: ENTERO
+        INICIO
+        VARIAR i DESDE 1 HASTA 100
+            REPETIR
+                ESCRIBIR("Ingrese el auto numero " + i)
+                LEER(Autos[i])
+            HASTA QUE(longitud(Autos[i] > 0))
+        FIN VARIAR
+    FIN PROCEDIMIENTO
+
+    PROCEDIMIENTO mostrarAutos(Autos[100]: CADENA)
+        VAR i: ENTERO
+        INICIO
+        VARIAR i DESDE 1 HASTA 100
+            ESCRIBIR("Auto " + i + ": " + Autos[i])
+        FIN VARIAR
+    FIN PROCEDIMIENTO
+
+    VAR Autos[100]: CADENA
+    INICIO
+    cargarDatos(Autos[])
+    mostrarAutos(Autos[])
+
+FIN PROGRAMA
